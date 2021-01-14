@@ -9,11 +9,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const pkg = require("./package.json");
 
 function unpkgRemote(name) {
-  const version =
-    pkg.dependencies[name].startsWith("^") ||
-    pkg.dependencies[name].startsWith("~")
-      ? pkg.dependencies[name].substring(1)
-      : pkg.dependencies[name];
+  const version = pkg.dependencies[name];
 
   return `${camelCase(
     name
